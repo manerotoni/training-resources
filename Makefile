@@ -6,10 +6,16 @@ MAKEFILES=Makefile $(wildcard *.mk)
 JEKYLL=bundle config --local set path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
 PARSER=bin/markdown_ast.rb
 DST=_site
-
+cmd_python3 = shell which python3 2>/dev/null
+cmd_python = shell which python 2>/dev/null
+ifeq ($(OS), Windows_NT)
+   cmd_python3 = shell where python3
+   cmd_python = shell where python
+endif
 # Check Python 3 is installed and determine if it's called via python3 or python
 # (https://stackoverflow.com/a/4933395)
-PYTHON3_EXE := $(shell which python3 2>/dev/null)
+PYTHON3_EXE := $(cmd_python3)
+
 ifneq (, $(PYTHON3_EXE))
   ifeq (,$(findstring Microsoft/WindowsApps/python3,$(subst \,/,$(PYTHON3_EXE))))
     PYTHON := python3
@@ -17,7 +23,7 @@ ifneq (, $(PYTHON3_EXE))
 endif
 
 ifeq (,$(PYTHON))
-  PYTHON_EXE := $(shell which python 2>/dev/null)
+  PYTHON_EXE := $(cmd_python)
   ifneq (, $(PYTHON_EXE))
     PYTHON_VERSION_FULL := $(wordlist 2,4,$(subst ., ,$(shell python --version 2>&1)))
     PYTHON_VERSION_MAJOR := $(word 1,${PYTHON_VERSION_FULL})
