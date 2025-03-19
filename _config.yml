@@ -19,6 +19,7 @@ default-platform: "NONE"
 life_cycle: "stable"
 kind: "lesson"
 
+
 module_order:
 - pixels
 - binarization
@@ -29,9 +30,14 @@ module_order:
 - multidimensional_image_basics
 - datatypes
 - image_file_formats
-- image_inspection_and_presentation
-- volume_slicing
 - big_image_file_formats
+- ome_tiff
+- remote_data_access
+- ome_zarr
+- table_file_formats
+- image_inspection_and_presentation
+- correlative_image_rendering
+- volume_slicing
 - projections
 - volume_viewer
 - segmentation
@@ -55,13 +61,12 @@ module_order:
 - script_variables
 - string_concat
 - output_saving
-- batch_processing
-- fetching_user_input
-- commenting
-- script_env
 - script_functions
 - script_for_loop
-- correlative_image_rendering
+- batch_processing
+- batch_qc_and_exploration
+- fetching_user_input
+- script_env
 - deep_learning_run_segmentation
 - manual_segmentation
 - workflow_golgi_per_cell

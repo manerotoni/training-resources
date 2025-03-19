@@ -1,7 +1,7 @@
 ---
 title:     Loops
 layout:    module
-tags: ["scripting", "draft"]
+tags: ["scripting"]
 objectives:
   - "Use for loops to repeat operations multiple times"
   - "Running a script for multiple files"
@@ -37,6 +37,7 @@ activities:
  - ["ImageJ Macro, example no loop", "script_for_loop/activities/script_for_loop_measure_distances_noloop.ijm"]
  - ["ImageJ Macro, example with loop", "script_for_loop/activities/script_for_loop_measure_distances_withloop.ijm"]
  - ["Python, for loop", "script_for_loop/script_for_loop_python.py"]
+ - ["Python, advanced for loop", "script_for_loop/script_advanced_for_loop.py"]
     
 exercise_preface: |
  ### Multiple erosion
