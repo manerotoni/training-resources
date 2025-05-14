@@ -39,7 +39,7 @@ jobs:
         shell: bash -l {0}
         run: conda run -n test pytest -vv test_python/test_all_platforms.py
       - name: windows test
-        if: matrix.os == 'windows-latest'
+        if: matrix.os == 'windows-2019'
         shell: cmd /C CALL {0}
         run: conda run -n test pytest -vv test_python/test_all_platforms.py
 
