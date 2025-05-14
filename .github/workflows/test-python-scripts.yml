@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, windows-2019, ubuntu-latest]
+        os: [macos-latest, windows-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
           miniforge-version: latest
           conda-remove-defaults: "true"
       - name: install common conda dependencies
-        run: conda install -n test -c conda-forge -c euro-bioimaging python=3.12 napari=0.6.0 pyqt pytest notebook matplotlib jupytext "scikit-image>=0.20" openijtiff -y
+        run: conda install -n test -c conda-forge -c euro-bioimaging python=3.12 napari=0.5.6 pyqt pytest notebook matplotlib jupytext "scikit-image>=0.20" openijtiff -y
       - name: linux test
         if: matrix.os == 'ubuntu-latest'
         shell: bash -l {0}
@@ -39,7 +39,7 @@ jobs:
         shell: bash -l {0}
         run: conda run -n test pytest -vv test_python/test_all_platforms.py
       - name: windows test
-        if: matrix.os == 'windows-2019'
+        if: matrix.os == 'windows-latest'
         shell: cmd /C CALL {0}
         run: conda run -n test pytest -vv test_python/test_all_platforms.py
 
