@@ -4,7 +4,7 @@ layout: module
 tags: ["scripting"]
 prerequisites:
   - "[Strings and paths](../string_concat)"
-  - "[For loops](../script_for_loop)"
+  - "[Loops](../script_for_loop)"
 objectives:
   - "Automatically process a number of images"
 motivation: |
@@ -23,7 +23,11 @@ figure: /figures/batch_processing.png
 figure_legend: Batch processing of several images, yielding as many segmentations and object measurement tables.
 
 multiactivities:
-  - ["batch_processing/batch_measure_nuclei_shapes.md", [["ImageJ SciJava Macro", "batch_processing/batch_measure_nuclei_shape.ijm"],["skimage python", "batch_processing/batch_measure_nuclei_shape.py"]]]
+  - ["batch_processing/batch_measure_nuclei_shapes.md", [
+    ["ImageJ Macro", "batch_processing/batch_measure_nuclei_shape.ijm"],
+    ["ImageJ SciJava Macro", "batch_processing/batch_measure_nuclei_shape_scijava.ijm"],
+    ["skimage python", "batch_processing/batch_measure_nuclei_shape.py"]
+    ]]
 
 assessment: >
 
